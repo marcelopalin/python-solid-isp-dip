@@ -1,0 +1,58 @@
+# (1) Rode manualmente a verificação
+#   $ pre-commit run --all-files
+# Ele mostrará os arquivos alterados, você pode tentar rodar
+# novamente e verá que está pronto para fazer commit!
+# Veja: https://www.architecture-performance.fr/ap_blog/some-pre-commit-git-hooks-for-python/
+# https://towardsdatascience.com/pre-commit-hooks-you-must-know-ff247f5feb7e
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v3.4.0
+    hooks:
+      - id: check-ast
+      - id: check-byte-order-marker
+      - id: check-case-conflict
+      - id: check-docstring-first
+      - id: check-executables-have-shebangs
+      - id: check-json
+      - id: check-yaml
+      - id: debug-statements
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+      - id: mixed-line-ending
+      - id: check-added-large-files
+        args: [--maxkb=30000]
+  - repo: https://github.com/psf/black
+    rev: 20.8b1
+    hooks:
+    -   id: black
+        args: [--config=pyproject.toml]
+  - repo: https://github.com/hadialqattan/pycln
+    rev: v0.0.1-beta.3
+    hooks:
+    -   id: pycln
+        args: [--config=pyproject.toml]
+  -   repo: local
+      hooks:
+        - id: requirements
+          name: requirements
+          entry: bash -c 'poetry export --without-hashes -f requirements.txt > requirements.txt; poetry export --dev --without-hashes -f requirements.txt >> requirements.txt'
+          language: system
+          pass_filenames: false
+          stages: [commit]
+  - repo: https://github.com/pycqa/isort
+    rev: 5.8.0
+    hooks:
+      - id: isort
+        args: [--filter-files]
+        files: \.py$
+        name: isort (python)
+      - id: isort
+        name: isort (cython)
+        types: [cython]
+      - id: isort
+        name: isort (pyi)
+        types: [pyi]
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v0.910
+    hooks:
+    -   id: mypy
