@@ -1,10 +1,14 @@
-Warning: The lock file is not up to date with the latest changes in pyproject.toml. You may be getting outdated dependencies. Run update to update them.
 certifi==2021.5.30; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.6.0"
 charset-normalizer==2.0.3; python_full_version >= "3.6.0" and python_version >= "3"
+colorama==0.4.4; python_version >= "3.5" and python_full_version < "3.0.0" and sys_platform == "win32" or sys_platform == "win32" and python_version >= "3.5" and python_full_version >= "3.5.0"
+dynaconf==3.1.4
 idna==3.2; python_version >= "3.5" and python_full_version < "3.0.0" or python_full_version >= "3.6.0" and python_version >= "3.5"
+loguru==0.5.3; python_version >= "3.5"
+pyfiglet==0.8.post1
 requests==2.26.0; (python_version >= "2.7" and python_full_version < "3.0.0") or (python_full_version >= "3.6.0")
+termcolor==1.1.0
 urllib3==1.26.6; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.6.0" and python_version < "4"
-Warning: The lock file is not up to date with the latest changes in pyproject.toml. You may be getting outdated dependencies. Run update to update them.
+win32-setctime==1.0.3; sys_platform == "win32" and python_version >= "3.5"
 appdirs==1.4.4; python_full_version >= "3.6.2"
 astroid==2.6.2; python_version >= "3.6" and python_version < "4.0"
 atomicwrites==1.4.0; python_version >= "3.6" and python_full_version < "3.0.0" and sys_platform == "win32" or sys_platform == "win32" and python_version >= "3.6" and python_full_version >= "3.4.0"
@@ -18,6 +22,7 @@ charset-normalizer==2.0.3; python_full_version >= "3.6.0" and python_version >= 
 click==8.0.1; python_version >= "3.6" and python_full_version >= "3.6.2"
 colorama==0.4.4; sys_platform == "win32" and python_version >= "3.6" and python_full_version >= "3.6.2" and python_version < "4.0" and platform_system == "Windows"
 distlib==0.3.2; python_full_version >= "3.6.1"
+dynaconf==3.1.4
 filelock==3.0.12; python_full_version >= "3.6.1"
 flake8==3.9.2; (python_version >= "2.7" and python_full_version < "3.0.0") or (python_full_version >= "3.5.0")
 identify==2.2.11; python_full_version >= "3.6.1"
@@ -25,6 +30,7 @@ idna==3.2; python_version >= "3.5" and python_full_version < "3.0.0" or python_f
 iniconfig==1.1.1; python_version >= "3.6"
 isort==5.9.2; python_full_version >= "3.6.1" and python_version < "4.0"
 lazy-object-proxy==1.6.0; python_version >= "3.6" and python_full_version < "3.0.0" and python_version < "4.0" or python_version >= "3.6" and python_version < "4.0" and python_full_version >= "3.6.0"
+loguru==0.5.3; python_version >= "3.5"
 mccabe==0.6.1; python_version >= "3.6" and python_full_version < "3.0.0" and python_version < "4.0" or python_version >= "3.6" and python_version < "4.0" and python_full_version >= "3.5.0"
 mypy-extensions==0.4.3; python_full_version >= "3.6.2" and python_version >= "3.5"
 mypy==0.910; python_version >= "3.5"
@@ -36,6 +42,7 @@ pluggy==0.13.1; python_version >= "3.6" and python_full_version < "3.0.0" or pyt
 pre-commit==2.13.0; python_full_version >= "3.6.1"
 py==1.10.0; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.4.0" and python_version >= "3.6"
 pycodestyle==2.7.0; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0"
+pyfiglet==0.8.post1
 pyflakes==2.3.1; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0"
 pylint==2.9.3; python_version >= "3.6" and python_version < "4.0"
 pyparsing==2.4.7; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.3.0" and python_version >= "3.6"
@@ -44,9 +51,11 @@ pyyaml==5.4.1; python_full_version >= "3.6.1"
 regex==2021.7.6; python_full_version >= "3.6.2"
 requests==2.26.0; (python_version >= "2.7" and python_full_version < "3.0.0") or (python_full_version >= "3.6.0")
 six==1.16.0; python_full_version >= "3.6.1"
+termcolor==1.1.0
 toml==0.10.2; python_full_version >= "3.6.1" and python_version >= "3.6" and python_version < "4.0"
 tomli==1.0.4; python_version >= "3.6" and python_full_version >= "3.6.2"
 typing-extensions==3.10.0.0; python_version >= "3.5"
 urllib3==1.26.6; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.6.0" and python_version < "4"
 virtualenv==20.6.0; python_full_version >= "3.6.1"
+win32-setctime==1.0.3; sys_platform == "win32" and python_version >= "3.5"
 wrapt==1.12.1; python_version >= "3.6" and python_version < "4.0"

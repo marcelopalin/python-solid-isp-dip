@@ -111,6 +111,16 @@ poetry shell
 poetry check
 ```
 
+# Parte 01
+
+Utilizaremos o Loguru, Dynaconf e SQLAlchemy.
+Criaremos uma pasta `app` com o projeto inicial.
+
+https://www.dynaconf.com/
+
+Leia:
+
+# Parte 02
 
 
 # Referências:
