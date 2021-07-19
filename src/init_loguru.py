@@ -7,10 +7,10 @@
 """
 
 
-from logging import Logger
 import sys
 from pathlib import Path
 from typing import Optional, Union
+
 from loguru import logger as _logger
 
 PathType = Union[str, Path]
@@ -64,5 +64,5 @@ def init_loguru(
         )
 
 
-def get_loguru_logger() -> Logger:
+def get_loguru_logger():
     return _logger

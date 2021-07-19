@@ -1,19 +1,48 @@
-# Introdução
+# 1. Introdução
 
-Vamos tentar entender o princípio da Inversão da Dependência através 
-do exemplo de como devemos implementar a conexão com Banco de Dados 
-de maneira que eu possa a qualquer momento trocar o BD que estou utilizando
-sem muito trabalho.
+Antes de tentar entender o princípio da Inversão da Dependência vamos
+instalar e configurar um Logger e um gerenciador de Configurações
+que considero os mais TOPs do momento.
 
-O princípio da Inversão das Dependências utilizam a Interface que não existem
-em Python. Mas nós iremos contornar isto através do uso de Classes Abstratas.
+Também vamos utilizar o SQLAlchemy 2.0, caso queira saber mais sobre o assunto assita a Live do Edu em https://www.youtube.com/hashtag/166
+https://github.com/dunossauro/live-de-python
 
-Primeiro vamos programar o projeto sem nos preocuparmos na troca de banco de
-dados. Vamos começar criando na raiz o arquivo main.py, a pasta src.
+As lives que ele já falou sobre o assunto são:
+- Corrotinas 152, 153, 154
+- Assíncrono 59
+- SQLAlchemy ORM - 139
 
-Vamos utilizar o SQLAlchemy 2.0, caso não saiba assista a Live do Edu em https://www.youtube.com/hashtag/166
+Vamos utilizar o SQLAlchemy 2.0 Style, Async ORM, novo estilo de Queries
+e Eventos.
 
-## Variáveis de Ambiente com Dynaconf
+Todas as funcionalidades de AsyncIO do SQLAlchemy são dadas pelo `greenlet`
+que é o gerenciador de Threads para fazer funcionar de maneira assíncrona.
+
+Atualmente tó temos dois banco de dados que suportam chamadas Assíncronas (dependem do driver do bd) até o momento: Postgres (psycopg2) e o SQLite (embora não seja assíncrono) ele possui uma api assíncrona `aiosqlite`.
+
+
+## 1.1. Instalando o SQLAlchemy 1.4 -> 2.0
+
+```s
+poetry add aiosqlite
+```
+
+```s
+poetry add sqlalchemy
+Using version ^1.4.21 for SQLAlchemy
+
+Updating dependencies
+Resolving dependencies... (14.4s)
+
+Writing lock file
+
+Package operations: 2 installs, 0 updates, 0 removals
+
+  • Installing greenlet (1.1.0)
+  • Installing sqlalchemy (1.4.21)
+```
+
+## 1.2. Variáveis de Ambiente com Dynaconf
 
 ```s
 poetry add dynaconf
@@ -36,8 +65,8 @@ dynaconf init -f toml
 
 🔑 .secrets.toml created to hold your secrets.
 
-🙈 the .secrets.toml is also included in `.gitignore` 
-  beware to not push your secrets to a public repo 
+🙈 the .secrets.toml is also included in `.gitignore`
+  beware to not push your secrets to a public repo
   or use dynaconf builtin support for Vault Servers.
 
 🎉 Dynaconf is configured! read more on https://dynaconf.com
@@ -111,8 +140,25 @@ DIR_OUTPUT="@jinja {{this.DIR_OUTPUT}}/production"
 DIR_OUTPUT="@jinja {{this.DIR_OUTPUT}}/development"
 ```
 
+## Cor no Terminal
 
-## Melhorando o Logger com Loguru
+
+```s
+poetry add termcolor
+poetry add types-termcolor
+```
+
+e também:
+
+```s
+mypy --install-types
+```
+
+Ele indicará a necessidade de instalar o termcolor types.
+Porém, não consegui resolver o problema do termcolor com
+
+
+## 1.3. Melhorando o Logger com Loguru
 
 ```s
 poetry add loguru

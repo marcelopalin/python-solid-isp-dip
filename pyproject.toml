@@ -13,6 +13,10 @@ pyfiglet = "^0.8.post1"
 termcolor = "^1.1.0"
 loguru = "^0.5.3"
 Jinja2 = "^3.0.1"
+SQLAlchemy = "^1.4.21"
+aiosqlite = "^0.17.0"
+types-termcolor = "^0.1.1"
+colorama = "^0.4.4"
 
 [tool.poetry.dev-dependencies]
 pytest = "^6.2.4"

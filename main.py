@@ -1,4 +1,3 @@
-
 """
     Descrição:
     Explicando como funciona os Princípios SOLID em Python.
@@ -9,11 +8,11 @@
 
 try:
     from pathlib import Path
-    from src.init_loguru import init_loguru, get_loguru_logger
-    from pyfiglet import Figlet
-    from termcolor import colored
 
-    from config import settings
+    from pyfiglet import Figlet
+
+    from src.config import settings
+    from src.init_loguru import get_loguru_logger, init_loguru
 
     init_loguru(
         file_path=Path(settings.LOG_MONITOR),
@@ -33,12 +32,11 @@ def main():
     logger.info("-" * 80)
     fmt_font = Figlet(font="standard")
     if settings.DEBUG:
-        logger.info("\n" + colored(fmt_font.renderText("DEBUG"), color="yellow"))
-    if settings.CURRENT_ENV == 'development':
-        logger.info("\n" + colored(fmt_font.renderText("DEV"), color="yellow"))
-    logger.info("\n" + colored(fmt_font.renderText("SOLID"), color="yellow"))
+        logger.info("\n" + fmt_font.renderText("DEBUG"))
+    if settings.CURRENT_ENV == "development":
+        logger.info("\n" + fmt_font.renderText("DEV"))
     logger.info("-" * 80)
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     main()
-    
