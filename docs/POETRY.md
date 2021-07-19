@@ -1,9 +1,9 @@
-# POETRY
+# 1. POETRY
 
 Referências:
 https://medium.com/analytics-vidhya/poetry-finally-an-all-in-one-tool-to-manage-python-packages-3c4d2538e828
 
-## Como instalar o Poetry?
+## 1.1. Como instalar o Poetry?
 
 ```s
 curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python3
@@ -88,7 +88,7 @@ WorkFlow usando pre-commits
 https://ljvmiranda921.github.io/notebook/2018/06/21/precommits-using-black-and-flake8/
 
 
-## Como atualizar Poetry?
+## 1.2. Como atualizar Poetry?
 
 Exemplo:
 
@@ -101,7 +101,7 @@ Poetry (1.1.6) is installed now. Great!
 ```
 
 
-## Como criar um Projeto do Zero com Poetry?
+## 1.3. Como criar um Projeto do Zero com Poetry?
 
 Vamos supor que deseja criar o projeto dentro do diretório `backend`
 e definir o nome dele diferente do nome do diretório passe a opção `--name`:
@@ -127,9 +127,9 @@ tree -L 2 .
 ```
 
 
-# Comandos Básicos do Poetry
+# 2. Comandos Básicos do Poetry
 
-## Inicializando o Poetry em um projeto existente:
+## 2.1. Inicializando o Poetry em um projeto existente:
 
 ```s
 poetry init
@@ -182,7 +182,7 @@ Como adicionar um pacote para Produção?
 poetry add requests
 ```
 
-## Como adicionar um pacote que serve apenas para o Ambiente de Desenvolvimento?
+## 2.2. Como adicionar um pacote que serve apenas para o Ambiente de Desenvolvimento?
 
 ```s
 poetry add -D pytest
@@ -257,7 +257,7 @@ poetry remove -D pytest
 ```
 
 
-## Saber as últimas versões dos Pacotes
+## 2.3. Saber as últimas versões dos Pacotes
 
 Se você não tem certeza que tem a última versão dos pacotes:
 
@@ -265,7 +265,7 @@ Se você não tem certeza que tem a última versão dos pacotes:
 poetry show --latest
 ```
 
-- Baixou o projeto do Git e quer instalar os pacotes:
+## Como inicializar um projeto que usa Poetry após sua Clonagem?
 
 ```s
 poetry install
@@ -301,7 +301,7 @@ poetry export -f requirements.txt > requirements.txt
 ```
 
 
-# Informação do Ambiente Virtual
+# 3. Informação do Ambiente Virtual
 
 ```s
 poetry env info
@@ -318,7 +318,7 @@ OS:       posix
 Python:   /usr
 ```
 
-## Como remover um pacote?
+## 3.1. Como remover um pacote?
 
 Se o pacote for de desenvolvimento devemos executar:
 

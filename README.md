@@ -91,7 +91,25 @@ pre-commit run --all-files
 Rode 2x, até aparecer tudo OK e novamente `git add .`
 e por fim o `git commit`
 
+## Como iniciar o projeto logo após ter baixado ele neste ponto?
 
+Ou melhor, como inicializar um projeto que usa Poetry após sua Clonagem?
+
+```s
+poetry install
+```
+
+- Habilitando o ambiente virtual:
+
+```s
+poetry shell
+```
+
+- Verifica erros no pyproject.toml:
+
+```s
+poetry check
+```
 
 
 
