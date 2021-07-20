@@ -1,6 +1,6 @@
 from sqlalchemy.ext.asyncio import create_async_engine
 
-from config import settings
+from src.config import settings
 
 
 class DBConnectionHandler:
@@ -8,7 +8,9 @@ class DBConnectionHandler:
 
     def __init__(self) -> None:
         # Private
-        self.__connection_string = f"sqlite//{settings.SQLITE_DBNAME}"
+        str_conn = f"sqlite+aiosqlite:///./{settings.SQLITE_DBNAME}"
+        print(f"{str_conn}")
+        self.__connection_string = str_conn
         self.session = None
 
     def get_engine(self):

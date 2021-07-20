@@ -122,6 +122,11 @@ https://www.dynaconf.com/
 
 # Parte 02
 
+Para visualizar o BD Sqlite instale: `sudo apt install sqlite3`
+`sudo apt install sqlitebrowser`
+Um visualizador mais sofisticado é o `DBeaver` mas é trabalhoso de instalar.
+Outros são os plug-ins do vscode.
+
 
 # Referências:
 

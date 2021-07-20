@@ -56,5 +56,14 @@
         "fortran_fixed-form": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
         "fortran": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt"
     },
-    "python.linting.pylintEnabled": true
+    "python.linting.pylintEnabled": true,
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "name": "my_db",
+            "database": "${workspaceFolder:python-solid-isp-dip}/my_dev_sqlite.db"
+        }
+    ],
+    "sqltools.useNodeRuntime": true
 }
